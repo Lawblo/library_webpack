@@ -1,10 +1,11 @@
-const library = (() => {
-    function main () {
-        console.log(123)
-        const test = document.createElement('div')
-        return test
-    }
-    return { main }
-})()
+import Book from './book';
 
-export default library
+export default class Library {
+  constructor(books) {
+    this.books = books;
+  }
+
+  static addBook(title, author, pages) {
+    this.books.push(new Book(title, author, pages));
+  }
+}
