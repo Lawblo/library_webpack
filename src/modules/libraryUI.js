@@ -5,10 +5,6 @@ const createLibrary = (() => {
   function main() {
     const libraryContainer = document.createElement('div');
     libraryContainer.classList.add('libraryContainer');
-
-    libraryContainer.innerHTML = `
-        `;
-
     return libraryContainer;
   }
 
