@@ -2,8 +2,8 @@ import createLibrary from './libraryUI';
 
 const UI = (() => {
   function main() {
-    const body = document.querySelector('body');
-    body.appendChild(createLibrary.main());
+    const libUI = document.querySelector('.libUI');
+    libUI.appendChild(createLibrary.main());
   }
   return { main };
 })();

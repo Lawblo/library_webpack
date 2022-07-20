@@ -6,20 +6,22 @@ module.exports = {
   entry: {
     index: './src/index.js',
   },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Placeholder',
+      template: './src/index.html',
+      filename: 'index.html',
     }),
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
+
   optimization: {
     runtimeChunk: 'single',
   },
