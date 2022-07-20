@@ -1,12 +1,12 @@
-import Library from './library';
-import Book from './book';
+// import Library from './library';
+// import Book from './book';
 
 const createLibrary = (() => {
   function main() {
     const libraryContainer = document.createElement('div');
+    libraryContainer.classList.add('libraryContainer');
 
     libraryContainer.innerHTML = `
-        <button> TEST </button>
         `;
 
     return libraryContainer;
