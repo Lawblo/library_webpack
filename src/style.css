@@ -12,3 +12,58 @@ body {
     height: 100vh;
     width: 100vw;    
 }
+
+form {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: aliceblue;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: 1rem;
+    width: 30rem;
+    
+}
+
+form > h1 {
+    grid-column: 1 / -1;
+}
+
+form > div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+label {
+    display: block;
+    width: 5rem;
+}
+  
+#read {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#read > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-cards {
+    display: grid;
+}
+
+.book-card {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.book-card > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

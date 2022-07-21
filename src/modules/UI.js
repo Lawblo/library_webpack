@@ -1,11 +1,37 @@
 import createLibrary from './libraryUI';
 
 const UI = (() => {
-  function main() {
-    const body = document.querySelector('body');
-    body.appendChild(createLibrary.main());
+  function clearMain() {
+    const main = document.querySelector('main');
+
+    while (main.firstChild) {
+      main.removeChild(main.firstChild);
+    }
   }
-  return { main };
+
+  function formTab() {
+    clearMain();
+    createLibrary.bookForm();
+    createLibrary.addLibraryEvents();
+  }
+
+  function displayTab() {
+    clearMain();
+    createLibrary.displayBooks();
+  }
+
+  function tabEvents() {
+    const newBtn = document.getElementById('add-book');
+    newBtn.addEventListener('click', formTab);
+
+    const displayBtn = document.getElementById('display-books');
+    displayBtn.addEventListener('click', displayTab);
+  }
+  function build() {
+    tabEvents();
+  }
+
+  return { build };
 })();
 
 export default UI;
