@@ -1,5 +1,12 @@
 :root {
     font-size: 16px;
+
+    /* SCSS RGB */
+    --black: rgba(0, 0, 0, 1);
+    --oxford-blue: rgba(20, 33, 61, 1);
+    --orange-web: rgba(252, 163, 17, 1);
+    --platinum: rgba(229, 229, 229, 1);
+    --white: rgba(255, 255, 255, 1);
 }
 
 * {
@@ -11,6 +18,19 @@
 body {
     height: 100vh;
     width: 100vw;    
+}
+
+nav {
+    background-color: var(--oxford-blue);
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+nav button {
+    background-color: var(--oxford-blue);
+    color: var(--orange-web);
+    border: none;
 }
 
 form {
