@@ -48,11 +48,16 @@ const createLibrary = (() => {
 
   function bookForm() {
     const libraryContainer = document.createElement('div');
-    libraryContainer.classList.add('library-container');
+    libraryContainer.classList.add('new-book-container');
 
-    libraryContainer.innerHTML = `
-        <form action="" id="enter-book">
-            <h1>Enter a new book: </h1>
+    const header = document.createElement('h1');
+    header.textContent = 'Enter a new book: ';
+    libraryContainer.appendChild(header);
+
+    const form = document.createElement('form');
+    form.setAttribute('id', 'enter-book');
+
+    form.innerHTML = `
             <input type="text"  id="book-title" placeholder="Title">
             <input type="text" name="" id="book-author" placeholder="Author">            
             <input type="number" name="" id="book-pages" placeholder="Pages">
@@ -65,10 +70,9 @@ const createLibrary = (() => {
                     <label for="book-not-read">Not read:</label>
                     <input type="radio" id="book-not-read" name="read-book" value=false> </div>
                 </div>
-            <input type="submit" value="submit" id="book-submit">
-        </form>
-`;
+            <input type="submit" value="submit" id="book-submit">`;
 
+    libraryContainer.appendChild(form);
     document.querySelector('main').appendChild(libraryContainer);
   }
 
@@ -81,7 +85,7 @@ const createLibrary = (() => {
       const author = document.getElementById('book-author').value;
       const pages = document.getElementById('book-pages').value;
       const read = document.querySelector(
-        'input[name="read-book"]:checked',
+        'input[name="read-book"]:checked'
       ).value;
 
       const createBook = new Book(title, author, pages, read);
