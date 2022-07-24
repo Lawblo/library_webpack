@@ -46,6 +46,10 @@ nav button {
   border-radius: 1rem;
 }
 
+h1 {
+  color: var(--white);
+}
+
 form {
   padding: 2rem;
   background-color: aliceblue;
