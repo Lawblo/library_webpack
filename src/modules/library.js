@@ -29,11 +29,24 @@ const Library = (() => {
     setLibrary(library);
   }
 
+  function removeBook(book) {
+    initLibrary();
+    const library = getLibrary();
+    const newLibrary = [];
+    library.forEach((libBook) => {
+      if (libBook.title !== book.title) {
+        newLibrary.push(libBook);
+      }
+    });
+    setLibrary(newLibrary);
+  }
+
   return {
     initLibrary,
     getLibrary,
     setLibrary,
     addBook,
+    removeBook,
   };
 })();
 

@@ -31,7 +31,7 @@ const UI = (() => {
     tabEvents();
   }
 
-  return { build };
+  return { build, clearMain };
 })();
 
 export default UI;
