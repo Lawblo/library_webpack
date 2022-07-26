@@ -1,23 +1,16 @@
 import createLibrary from './libraryUI';
 
 const UI = (() => {
-  function clearMain() {
-    const main = document.querySelector('main');
-
-    while (main.firstChild) {
-      main.removeChild(main.firstChild);
-    }
-  }
-
   function formTab() {
-    clearMain();
+    createLibrary.clearMain();
     createLibrary.bookForm();
-    createLibrary.addLibraryEvents();
+    createLibrary.addFormEvents();
   }
 
   function displayTab() {
-    clearMain();
+    createLibrary.clearMain();
     createLibrary.displayBooks();
+    createLibrary.addDisplayEvents();
   }
 
   function tabEvents() {
@@ -31,7 +24,7 @@ const UI = (() => {
     tabEvents();
   }
 
-  return { build, clearMain };
+  return { build };
 })();
 
 export default UI;
